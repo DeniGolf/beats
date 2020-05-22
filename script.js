@@ -191,56 +191,6 @@ class DrumKit {
       }
     });
   }
-  // duplicateTrack(event) {
-  //   const currentTrackData = event.target.getAttribute("data-track");
-  //   const currentTrack = document.querySelector(`.track-${currentTrackData}`);
-  //   const copiedTrack = currentTrack.cloneNode(true);
-  //   const sequencer = document.getElementsByClassName("sequencer")[0];
-
-  //   switch (currentTrackData) {
-  //     case "0":
-  //       copiedTrack.classList.add(`kick-copy-${this.inititial0}`);
-  //       copiedTrack.children[0].style.opacity = "0";
-  //       copiedTrack.children[2].style.opacity = "0";
-  //       sequencer.insertBefore(
-  //         copiedTrack,
-  //         document.querySelector(`.track-${+currentTrackData + 1}`)
-  //       );
-
-  //       this.inititial0++;
-  //       break;
-
-  //     case "1":
-  //       copiedTrack.classList.add(`copy-${this.inititial1}`);
-  //       copiedTrack.children[0].style.opacity = "0";
-  //       copiedTrack.children[2].style.opacity = "0";
-
-  //       sequencer.insertBefore(
-  //         copiedTrack,
-  //         document.querySelector(`.track-${+currentTrackData + 1}`)
-  //       );
-  //       this.inititial1++;
-  //       break;
-  //     case "2":
-  //       copiedTrack.classList.add(`copy-${this.inititial2}`);
-  //       copiedTrack.children[0].style.opacity = "0";
-  //       copiedTrack.children[2].style.opacity = "0";
-
-  //       sequencer.insertBefore(copiedTrack, document.querySelector(`.play`));
-  //       this.inititial2++;
-  //       break;
-  //   }
-  //   const pads = document.querySelectorAll(".pad");
-
-  //   pads.forEach((pad) => {
-  //     pad.addEventListener("click", this.activePad);
-  //     pad.addEventListener("animationend", function () {
-  //       this.style.animation = "";
-  //     });
-  //   });
-
-  //   console.log();
-  // }
   changeTempo(event) {
     const tempoText = document.querySelector(".tempo-nr");
     const slider = document.querySelector("input");
