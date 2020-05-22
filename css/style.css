@@ -108,6 +108,16 @@ h1.track-title {
   margin-top: 2rem;
 }
 
+.clear {
+  padding: 0.4rem 0.4rem;
+  font-size: 1rem;
+  background: rgb(71, 71, 71);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
 select {
   padding: 1rem;
   min-width: 45%;

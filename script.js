@@ -19,6 +19,7 @@ class DrumKit {
     this.isPlaying = null;
     this.selects = document.querySelectorAll("select");
     this.muteButtons = document.querySelectorAll(".mute");
+    this.clearButton = document.querySelector(".clear");
     this.tempoSlider = document.querySelector(".tempo-slider");
     this.duplicateButtons = document.querySelectorAll(".duplicate-track");
   }
@@ -183,6 +184,13 @@ class DrumKit {
       }
     }
   }
+  clearActive() {
+    this.pads.forEach((pad) => {
+      if (pad.classList.contains("active")) {
+        pad.classList.remove("active");
+      }
+    });
+  }
   // duplicateTrack(event) {
   //   const currentTrackData = event.target.getAttribute("data-track");
   //   const currentTrack = document.querySelector(`.track-${currentTrackData}`);
@@ -296,4 +304,8 @@ drumKit.tempoSlider.addEventListener("input", function (event) {
 
 drumKit.tempoSlider.addEventListener("change", function (event) {
   drumKit.updateTempo(event);
+});
+
+drumKit.clearButton.addEventListener("click", function (event) {
+  drumKit.clearActive();
 });
