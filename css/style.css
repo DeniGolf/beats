@@ -16,9 +16,9 @@ svg {
 .kick-pad,
 .snare-pad,
 .hihat-pad {
-  width: 5rem;
-  height: 5rem;
-  margin: 1rem 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0rem 0.5rem;
 
   cursor: pointer;
 }
@@ -60,9 +60,9 @@ svg {
 .kick-track {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 90%;
   justify-content: space-between;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .kick,
@@ -75,16 +75,21 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   flex: 1;
   margin: 0rem 2rem;
 }
 
+h1.track-title {
+  min-width: 30%;
+}
 .controls button {
   padding: 1rem;
   border: none;
+
   background: rgb(88, 88, 88);
   color: white;
-  font-size: 1rem;
+  font-size: rem;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -100,11 +105,12 @@ svg {
   color: white;
   border: none;
   cursor: pointer;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 select {
   padding: 1rem;
+  min-width: 45%;
   font-size: 1rem;
   margin-left: 1rem;
 }
@@ -113,9 +119,20 @@ select {
   background: rgb(184, 184, 184);
 }
 
+.duplicate-track {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  background: rgb(88, 88, 88);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .tempo {
   width: 30%;
-  margin: 3rem;
+  margin-top: 1rem;
 }
 
 .tempo-slider {
@@ -157,9 +174,13 @@ input[type="range"].zero::-webkit-slider-thumb {
   border: 10px solid rgb(88, 88, 88);
 }
 
+input[type="range"].red::-webkit-slider-thumb {
+  border: 10px solid rgb(200, 77, 131);
+}
+
 .tempo p {
   font-size: 1.5rem;
-  margin: 2rem;
+
   text-align: center;
 }
 
