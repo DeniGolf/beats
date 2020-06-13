@@ -130,14 +130,17 @@ function detailAnimation() {
   const nav = document.querySelector(".nav-header");
   const section = document.querySelector("section");
   controller = new ScrollMagic.Controller();
-
   const slides = document.querySelectorAll(".detail-slide");
   slides.forEach((slide, index, slides) => {
     const slideTl = gsap.timeline({ defaults: { duration: 1 } });
 
     let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+    console.log(nextSlide);
+    if (nextSlide === "end") return;
     const nextImg = nextSlide.querySelector("img");
+
     const nextNr = nextSlide.querySelector(".fashion-nr");
+
     const nextText = nextSlide.querySelector(".fashion-text");
     slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
     slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, "-=1");
@@ -145,7 +148,7 @@ function detailAnimation() {
     slideTl.fromTo(
       nextNr,
       { scale: "1.25", x: "-10%", borderWidth: "0" },
-      { scale: "1", x: "0%", borderWidth: "5" },
+      { scale: "1", x: "0%", borderWidth: "3" },
       "-=1"
     );
     slideTl.fromTo(nextText, { opacity: "0" }, { opacity: "1" }, "-=1");
