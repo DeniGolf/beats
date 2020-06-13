@@ -151,10 +151,10 @@ body {
 .reveal-text {
   position: absolute;
   width: 100%;
-  height: 150%;
+  height: 100%;
   background: #17181a;
+  top: 0;
   left: 0;
-  top: -15%;
 }
 
 .cursor {
@@ -226,20 +226,20 @@ body.hide {
 .fashion1,
 .fashion2,
 .fashion3 {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
   margin: auto;
   color: white;
-  margin-top: 3rem;
+  margin-top: 1rem;
   flex-wrap: wrap;
   position: relative;
 }
+
 .fashion-img {
-  height: 70vh;
-  flex-basis: 30rem;
+  flex-basis: 35rem;
   z-index: 1;
 }
 .fashion-text {
@@ -247,6 +247,7 @@ body.hide {
   position: relative;
   flex-basis: 25rem;
   z-index: 1;
+  margin-top: 3.9rem;
 }
 .fashion-img img {
   width: 100%;
@@ -256,7 +257,7 @@ body.hide {
 
 .fashion-text h1 {
   font-size: 6rem;
-  padding: 5rem 0rem;
+  padding: 0rem 0rem;
 }
 
 .fashion1 h1 {
@@ -278,13 +279,12 @@ body.hide {
   font-size: 10rem;
   position: absolute;
   left: 40%;
-  bottom: 11%;
+  bottom: 15%;
 
   color: white;
   opacity: 0.2;
   border: 3px solid white;
 }
-
 @media screen and (max-width: 1500px) {
   .hero-img {
     height: 50vh;
@@ -301,8 +301,11 @@ body.hide {
     object-position: top;
   }
 }
-
 @media screen and (max-width: 1024px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
   main {
     width: 100%;
     margin: 0;
@@ -311,6 +314,7 @@ body.hide {
     display: block;
     width: 100%;
     text-align: center;
+    min-height: 100vh;
   }
   .hero-desc {
     padding: 0;
@@ -318,6 +322,7 @@ body.hide {
   .hero-img {
     padding-top: 4rem;
   }
+
   .hero-desc h2 {
     font-size: 1.6rem;
     padding: 1rem 0rem;
@@ -333,20 +338,33 @@ body.hide {
     margin: auto;
   }
   .detail-slide {
-    width: 100%;
+    width: 95%;
+
     text-align: center;
   }
   .fashion-text p {
     margin-bottom: 5rem;
     padding: 0;
+    font-size: 1rem;
   }
-  .fastion-text h1 {
+  .fashion-text h1 {
     margin: 2rem 0rem;
+    font-size: 5rem;
+  }
+  .fashion-img img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
   }
   .fashion-nr {
-    font-size: 4rem;
-    padding: 2rem;
-    bottom: -5px;
+    font-size: 5rem;
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    bottom: 40%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
   }
   .nav-bar {
     display: block;
@@ -354,6 +372,7 @@ body.hide {
   .nav-links {
     font-size: 2rem;
     text-align: center;
+    margin-top: 3rem;
   }
   .contact h2 {
     font-size: 3rem;
@@ -363,5 +382,8 @@ body.hide {
     font-size: 1.2rem;
     padding: 2rem;
     text-align: center;
+  }
+  .cursor {
+    display: none;
   }
 }
