@@ -4,9 +4,11 @@ let playBtn = document.querySelector("#playBtn");
 let pauseBtn = document.querySelector("#pauseBtn");
 let runOffBtn = document.querySelector("#runOffBtn");
 let runOffInput = document.querySelector("#runOffInput");
-let phoneNumberInput = document.querySelector("#phoneNumberInput");
+const phoneInput = document.querySelector("#phoneInput");
+const nameInput = document.querySelector("#nameInput");
+const statusMessage = document.querySelector("#statusMessage");
 
-
+// Youtube API
 tag.src = "https://www.youtube.com/iframe_api";
 let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -16,8 +18,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    width: "100%",
-    height: "100%",
+ 
 
     videoId: 'MPmyncxmsus',
     events: {
@@ -48,20 +49,17 @@ function onPlayerReady(event) {
 
 // 5. The API calls this function when the player's state changes.
 //    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+
 var done = false;
 
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
     done = true;
   }
 }
 
-function stopVideo() {
-  player.stopVideo();
-}
 
+//Phone number mask
 Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
 
 function applyDataMask(field) {
@@ -104,6 +102,7 @@ function applyDataMask(field) {
 
 let map;
 
+// Google Maps API
 function initMap() {
   const center = {lat: 50.490846593594256, lng: 30.50709543848514};
 
@@ -113,6 +112,7 @@ function initMap() {
 
   map = new google.maps.Map(document.getElementById("map"), {
     center,
+    // disableDefaultUI: true,
     zoom: 12,
   });
 
@@ -134,6 +134,54 @@ function initMap() {
     icon: "img/marker-orange.svg"
   });
 }
+
+// Google Sheets POST
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwJUCQs_Xj3vOPgdzcLRiDlJCjFk2sPUHo044LZ3J236v1IosCVqBnc2gfIEAdEt1M-/exec'
+  const form = document.forms['google-sheet']
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    const formInputValue = nameInput.value.trim();
+    let submitted = false;
+    let span = document.createElement("span");
+        span.classList.add("span-message");
+        span.innerHTML= "Form Submitting...";
+        statusMessage.appendChild(span);
+    
+    if(formInputValue.length > 3) {
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        statusMessage.removeChild(span);
+
+        span.classList.add("success-message");
+        const link = document.createElement("a");
+        link.setAttribute("target", "_blank");
+        link.setAttribute("href", "https://docs.google.com/spreadsheets/d/1lbf-QDdMA7Rcg0lvTuZp9xTlNxZzfoQEC9Jb_nJPiLM/edit?usp=sharing");
+        link.innerHTML = "Google Sheets";
+        span.innerHTML= "Data has been sent to ";
+        span.appendChild(link);
+        statusMessage.appendChild(span);
+
+        nameInput.value = "";
+        phoneInput.value = "";
+
+        setTimeout(() => statusMessage.removeChild(span), 8000);
+
+      })
+      .catch(error => console.error('Error!', error.message))
+    } else {
+      statusMessage.removeChild(span);
+
+
+      span.classList.add("error-message");
+      span.innerHTML= "Your name must be at least <b>3</b> characters!";
+      statusMessage.appendChild(span);
+
+      nameInput.value = "";
+      phoneInput.value = "";
+      
+      setTimeout(() => statusMessage.removeChild(span), 3000);
+    }
+  })
 
 
 

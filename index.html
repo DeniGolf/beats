@@ -13,112 +13,136 @@
 <body>
   <div class="container">
     <header class="header">
-    <div class="left">
-      <div class="picture">
-        <div class="polygon"><img src="/img/logo.svg" alt=""></div>
-      </div>
-    </div>
-    <div class="right">
-      <nav class="navigation">
-        <a href="#" class="navigation-icon"><img src="/img/search.svg" alt=""></a>
-        <a href="#" class="navigation-icon"><img src="/img/shopping-cart.svg" alt=""></a>
-        <a href="#" class="btn">Sign up</a>
-        <a href="#" class="btn navigation-btn">Sign in</a>
-        <a href="#" class="btn navigation-btn">Menu</a>
-      </nav>
-      <div class="right-content">
-        <h1>Have questions?</h1>
-        <div class="text">
-          <p class="content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rem eligendi cumque nulla perferendis magnam, quasi inventore et voluptates quisquam odit quos temporibus explicabo cupiditate molestias repellendus ea vero dolores quia eveniet! Voluptatibus ab nisi debitis iste porro rerum. Non a eius, iure pariatur voluptate totam recusandae aliquid dignissimos! Provident.</p>
-          <p class="content-text gold">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione eligendi cupiditate facere natus dolorum eaque perferendis aperiam alias! Ea animi iste doloribus temporibus numquam fuga!</p>
+      <div class="header__main-picture-container">
+        <div class="header__main-picture-block">
+          <img class="header__main-picture" src="/img/logo.svg" alt="plant">
         </div>
-        <form action="#">
-          <div class="form__div">
-            <input type="text" class="form__input">
-            <label for="" class="form__label">Your name</label>
-          </div>
-          <div class="form__div">
-            <input type="text" class="form__input" value="+380 __ ___ __ __" data-mask="___ __ ___ __ __">
-            <label for="" class="form__label" >Your phone</label>
-          </div>
-          <button type="submit" class="control-btn" id="sendBtn">SEND</button>
-        </form>
       </div>
+      <div class="header__content-container">
+        <nav class="header__navigation-container">
+          <ul class="header__navigation">
+            <li class="header__navigation-block--icon"><a href="#"><img class="header__navigation-icon" src="img/search.svg" alt=""></a></li>
+            <li class="header__navigation-block--icon"><a href="#"><img class="header__navigation-icon" src="img/shopping-cart.svg" alt=""></a></li>
+            <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button">Sign up</a></li>
+            <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button--green">Sign in</a></li>
+            <li class="header__navigation-block">
+              <div class="header__dropdawn">
+                <a href="#" class="header__navigation-button header__navigation-button--green">Menu <img src="img/arrow.svg"></a>
+                <ul>
+                  <li><a href="#">Element one</a></li>
+                  <li><a href="#">Element two</a></li>
+                  <li><a href="#">Element three</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__info-container">
+          <div class="header__text-container">
+            <h1 class="header__heading">Have questions?</h1>
+            <p class="header__text">
+              Необхідно створити форму зворотньго зв’язку.</br>
+              Для розуміння роботи форми, а саме зміщення label при наборі тексту, рекомендуємо ознайомитися з Google Material Design (https://material.io/components/text-fields).</br>
+              Також створити JS валідацію форми. Ім’я повинно бути мінімум 3 символи (не враховуючи порожні). Номер телефону повинен мати маску, задану на дизайні.
+            </p>
+            <p class="header__text header__text--highlighted">Додаткове завдання: данні форми після відправки автоматично додавати до Google Spreadsheets по API (мову інтеграції можете обрати на свій розсуд).</p>
+          </div>
+          <div id="statusMessage"></div>
+          <form action="post" name="google-sheet" autocomplete="off">
+            <div class="header__form-block">
+              <input type="text" class="header__form-input" name="Name" id="nameInput" placeholder=" ">
+              <label for="" class="header__form-label">Your name</label>
+            </div>
+            <div class="header__form-block">
+              <input type="text" class="header__form-input" data-mask="___ __ ___ __ __" name="Phone" id="phoneInput" placeholder=" ">
+              <label for="" class="header__form-label" >Your phone</label>
+            </div>
+            <div class="header__form-block">
+              <button type="submit" class="header__submit-button" id="sendBtn">SEND</button>
+            </div>
+          </form>
+       </div>
     </div>
   </header>
   <main class="main">
-    <section class="info">
-    <div class="info__container">
-      <div class="info__card">
-        <div class="card__top">
+    <section class="cards">
+    <div class="cards__container">
+      <div class="cards__card">
+        <div class="cards__card--top">
           <img src="/img/car.svg" alt="">
           <h2>Мобільна </br> версія</h2>
         </div>
-        <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="cards__card--bottom">
+          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        </div>
       </div>
-      <div class="info__card">
-        <div class="card__top">
+      <div class="cards__card">
+        <div class="cards__card--top">
           <img src="/img/car.svg" alt="">
           <h2>Мобільна </br> версія</h2>
         </div>
-        <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="cards__card--bottom">
+          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        </div>
       </div>
-      <div class="info__card">
-        <div class="card__top">
+      <div class="cards__card">
+        <div class="cards__card--top">
           <img src="/img/car.svg" alt="">
           <h2>Мобільна </br> версія</h2>
         </div>
-        <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="cards__card--bottom">
+          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        </div>
       </div>
-      <div class="info__card">
-        <div class="card__top">
+      <div class="cards__card">
+        <div class="cards__card--top">
           <img src="/img/car.svg" alt="">
           <h2>Мобільна </br> версія</h2>
         </div>
-        <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="cards__card--bottom">
+          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        </div>
       </div>
-
-      
-   
     </div>
     </section>
     <section class="map">
-      <div class="map-task">
+      <div class="map__task">
         <p>Нижче представлений дизайн Google карти. Тут необхідно підключити API Google Maps і нанести покажчики на координати (їх можна взяти приблизно). Основне завдання додати кастомні іконки, зазначені на дизайні. Блоки із завданням також потрібно залишити в верстці.</p>
       </div>
-      <div class="map-container">
+      <div class="map__container">
         <div id="map"></div>
       </div>
     </section>
     <section class="video">
-      <div class="video-player">
-        <div id="player" class="video-player"></div>
+      <div class="video__container">
+        <div id="player" class="video__player"></div>
       </div>
-      <div class="video-controls">
-        <div class="control-buttons">
-          <button class="btn control-btn" id="playBtn">PLAY</button>
-          <button class="btn control-btn" id="pauseBtn">PAUSE</button>
-          <button class="btn control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
-          <input type="text" class="control-input" placeholder="startSeconds" id="runOffInput">
+      <div class="video__controls-container">
+        <div class="video__controls">
+          <button class="btn video__control-btn" id="playBtn">PLAY</button>
+          <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
+          <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
+          <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
         </div>  
-        <p class="controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
+        
+        <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
       </div>
     </section>
   </main>
   <div class="line"></div>
   <footer class="footer">
-    <div class="footer__right">
-      <h1 class="footer-heading">PLANTKU</h1>
-      <h2 class="footer-secondary-heading">Plantku House</h2>
+    <div class="footer__left-container">
+      <h1 class="footer__heading">PLANTKU</h1>
+      <h2 class="footer__secondary-heading">Plantku House</h2>
       <p class="footer__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, porro.</p>
     </div>
-    <div class="footer__left">
-      <h2 class="footer-secondary-heading">Menu</h2>
-    <ul class="footer__list">
-      <li><a href="#">Element one</a></li>
-      <li><a href="#">Element two</a></li>
-      <li><a href="#">Element three</a></li>
-    </ul>
+    <div class="footer__right-container">
+      <h2 class="footer__secondary-heading">Menu</h2>
+      <ul class="footer__list">
+        <li><a href="#">Element one</a></li>
+        <li><a href="#">Element two</a></li>
+        <li><a href="#">Element three</a></li>
+      </ul>
   </div>
   </footer>
   </div>
