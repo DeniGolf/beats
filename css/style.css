@@ -101,8 +101,8 @@ button {
 
 .header {
   display: flex;
-  height: 80vh;
   margin-bottom: 6rem;
+  align-items: flex-start;
 }
 
 .header__main-picture-container {
@@ -110,8 +110,8 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 50%;
+  height: 74rem;
   position: relative;
-
 }
 
 .header__main-picture-block {
@@ -155,12 +155,12 @@ button {
   margin-right: 1rem;
 }
 
-.header__navigation-block:nth-child(3) {
-  margin-right: 0rem;
-}
 
-.header__navigation-block--icon {
-  width: 6rem;
+
+.header__navigation-block--icons {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
   text-align: right;
 }
 
@@ -182,7 +182,7 @@ button {
   right: 0;
   opacity: 0;
   border-radius: 0rem;
-  width: 15rem;
+  width: 100%;
   transition: all .3s ease;
   padding: 1rem 2rem;
   opacity: 1;
@@ -501,7 +501,7 @@ button {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 100%;
   }
@@ -512,12 +512,11 @@ button {
 
   .cards__container {
     align-items: center;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
   }
 
   .cards__card {
-    flex-basis: 45%;
+    flex-basis: 48%;
     margin-bottom: 2rem;
   }
 
@@ -571,5 +570,103 @@ button {
 
   .video__control-btn:nth-child(3) {
     margin-right: 0rem;
+  }
+
+  .main {
+    padding: 0rem 3rem;
+  }
+
+  .header__content-container {
+    padding: 3rem ;
+   
+  }
+  .header__navigation-container {
+    margin-top: 0;
+  }
+
+  .header {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 473px) {
+html {
+  font-size: 55%;
+}
+
+  .header {
+    margin-bottom: 0;
+  }
+
+  .main {
+    padding: 0rem 3rem;
+  }
+
+  .header__content-container {
+    padding: 3rem ;
+   
+  }
+
+  .header__navigation {
+    flex-wrap: wrap;
+  }
+
+  .header__navigation-block--icons {
+    justify-content: flex-end;
+    
+  }
+
+  .header__navigation-button {
+    width: 100%;
+  }
+
+
+
+  .header__navigation-block:nth-child(1) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+   
+  }
+
+  .header__navigation-block {
+    width: 100%;
+    margin: 0;
+    margin-bottom: .5rem;
+  }
+
+
+
+  .header__navigation-block:nth-child(1) a:not(:last-child){
+    margin-right: 2rem;
+  }
+
+  .header__navigation-block:not(:last-child) {
+    margin-right: 0;
+  }
+
+ 
+
+  .header__form-input {
+    width: 100%;
+  }
+
+  .header__submit-button{
+    width: 100%;
+  }
+
+  .video__player {
+    margin-right: 0;
+  }
+
+
+  .cards__container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards__card {
+    flex-basis: 100%;
+    margin-bottom: 3rem;
   }
 }

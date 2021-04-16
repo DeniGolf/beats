@@ -7,8 +7,6 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/59c2148683.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
@@ -21,8 +19,10 @@
       <div class="header__content-container">
         <nav class="header__navigation-container">
           <ul class="header__navigation">
-            <li class="header__navigation-block--icon"><a href="#"><img class="header__navigation-icon" src="img/search.svg" alt=""></a></li>
-            <li class="header__navigation-block--icon"><a href="#"><img class="header__navigation-icon" src="img/shopping-cart.svg" alt=""></a></li>
+            <li class="header__navigation-block header__navigation-block--icons">
+              <a href="#"><img class="header__navigation-icon" src="img/search.svg" alt=""></a>
+              <a href="#"><img class="header__navigation-icon" src="img/shopping-cart.svg" alt=""></a>
+            </li>
             <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button">Sign up</a></li>
             <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button--green">Sign in</a></li>
             <li class="header__navigation-block">
@@ -61,95 +61,92 @@
               <button type="submit" class="header__submit-button" id="sendBtn">SEND</button>
             </div>
           </form>
-       </div>
-    </div>
-  </header>
-  <main class="main">
-    <section class="cards">
-    <div class="cards__container">
-      <div class="cards__card">
-        <div class="cards__card--top">
-          <img src="/img/car.svg" alt="">
-          <h2>Мобільна </br> версія</h2>
-        </div>
-        <div class="cards__card--bottom">
-          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
         </div>
       </div>
-      <div class="cards__card">
-        <div class="cards__card--top">
-          <img src="/img/car.svg" alt="">
-          <h2>Мобільна </br> версія</h2>
+    </header>
+    <main class="main">
+      <section class="cards">
+      <div class="cards__container">
+        <div class="cards__card">
+          <div class="cards__card--top">
+            <img src="/img/car.svg" alt="">
+            <h2>Мобільна </br> версія</h2>
+          </div>
+          <div class="cards__card--bottom">
+            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+          </div>
         </div>
-        <div class="cards__card--bottom">
-          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="cards__card">
+          <div class="cards__card--top">
+            <img src="/img/car.svg" alt="">
+            <h2>Мобільна </br> версія</h2>
+          </div>
+          <div class="cards__card--bottom">
+            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+          </div>
+        </div>
+        <div class="cards__card">
+          <div class="cards__card--top">
+            <img src="/img/car.svg" alt="">
+            <h2>Мобільна </br> версія</h2>
+          </div>
+          <div class="cards__card--bottom">
+            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+          </div>
+        </div>
+        <div class="cards__card">
+          <div class="cards__card--top">
+            <img src="/img/car.svg" alt="">
+            <h2>Мобільна </br> версія</h2>
+          </div>
+          <div class="cards__card--bottom">
+            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+          </div>
         </div>
       </div>
-      <div class="cards__card">
-        <div class="cards__card--top">
-          <img src="/img/car.svg" alt="">
-          <h2>Мобільна </br> версія</h2>
+      </section>
+      <section class="map">
+        <div class="map__task">
+          <p>Нижче представлений дизайн Google карти. Тут необхідно підключити API Google Maps і нанести покажчики на координати (їх можна взяти приблизно). Основне завдання додати кастомні іконки, зазначені на дизайні. Блоки із завданням також потрібно залишити в верстці.</p>
         </div>
-        <div class="cards__card--bottom">
-          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="map__container">
+          <div id="map"></div>
         </div>
-      </div>
-      <div class="cards__card">
-        <div class="cards__card--top">
-          <img src="/img/car.svg" alt="">
-          <h2>Мобільна </br> версія</h2>
+      </section>
+      <section class="video">
+        <div class="video__container">
+          <div id="player" class="video__player"></div>
         </div>
-        <div class="cards__card--bottom">
-          <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+        <div class="video__controls-container">
+          <div class="video__controls">
+            <button class="btn video__control-btn" id="playBtn">PLAY</button>
+            <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
+            <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
+            <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
+          </div>  
+          <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
         </div>
+      </section>
+    </main>
+    <div class="line"></div>
+    <footer class="footer">
+      <div class="footer__left-container">
+        <h1 class="footer__heading">PLANTKU</h1>
+        <h2 class="footer__secondary-heading">Plantku House</h2>
+        <p class="footer__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, porro.</p>
       </div>
-    </div>
-    </section>
-    <section class="map">
-      <div class="map__task">
-        <p>Нижче представлений дизайн Google карти. Тут необхідно підключити API Google Maps і нанести покажчики на координати (їх можна взяти приблизно). Основне завдання додати кастомні іконки, зазначені на дизайні. Блоки із завданням також потрібно залишити в верстці.</p>
+      <div class="footer__right-container">
+        <h2 class="footer__secondary-heading">Menu</h2>
+        <ul class="footer__list">
+          <li><a href="#">Element one</a></li>
+          <li><a href="#">Element two</a></li>
+          <li><a href="#">Element three</a></li>
+        </ul>
       </div>
-      <div class="map__container">
-        <div id="map"></div>
-      </div>
-    </section>
-    <section class="video">
-      <div class="video__container">
-        <div id="player" class="video__player"></div>
-      </div>
-      <div class="video__controls-container">
-        <div class="video__controls">
-          <button class="btn video__control-btn" id="playBtn">PLAY</button>
-          <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
-          <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
-          <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
-        </div>  
-        
-        <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
-      </div>
-    </section>
-  </main>
-  <div class="line"></div>
-  <footer class="footer">
-    <div class="footer__left-container">
-      <h1 class="footer__heading">PLANTKU</h1>
-      <h2 class="footer__secondary-heading">Plantku House</h2>
-      <p class="footer__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, porro.</p>
-    </div>
-    <div class="footer__right-container">
-      <h2 class="footer__secondary-heading">Menu</h2>
-      <ul class="footer__list">
-        <li><a href="#">Element one</a></li>
-        <li><a href="#">Element two</a></li>
-        <li><a href="#">Element three</a></li>
-      </ul>
-  </div>
-  </footer>
+    </footer>
   </div>
 
-  <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAI-wjRrpckvUdAJDrs8mmEuUQoLsHM4&callback=initMap">
-</script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAI-wjRrpckvUdAJDrs8mmEuUQoLsHM4&callback=initMap"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
