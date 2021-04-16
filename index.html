@@ -121,12 +121,20 @@
         </div>
         <div class="video__controls-container">
           <div class="video__controls">
-            <button class="btn video__control-btn" id="playBtn">PLAY</button>
-            <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
-            <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
-            <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
+            <div class="video__controls-row">
+              <button class="btn video__control-btn" id="playBtn">PLAY</button>
+              <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
+            </div>
+         
+              <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
+        
+            
+              <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
+         
           </div>  
-          <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
+          <div class="video__text-container">
+            <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
+          </div>
         </div>
       </section>
     </main>
