@@ -451,6 +451,7 @@ button {
   flex-direction: column;
   color: #156963;
   font-size: 1.4rem;
+  margin-top: 2rem;
 }
 
 .footer__list li a {
