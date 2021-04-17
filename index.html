@@ -1,163 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <div class="header__main-picture-container">
-        <div class="header__main-picture-block">
-          <img class="header__main-picture" src="/img/logo.svg" alt="plant">
-        </div>
-      </div>
-      <div class="header__content-container">
-        <nav class="header__navigation-container">
-          <ul class="header__navigation">
-            <li class="header__navigation-block header__navigation-block--icons">
-              <a href="#"><img class="header__navigation-icon" src="img/search.svg" alt=""></a>
-              <a href="#"><img class="header__navigation-icon" src="img/shopping-cart.svg" alt=""></a>
-            </li>
-            <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button">Sign up</a></li>
-            <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button--green">Sign in</a></li>
-            <li class="header__navigation-block">
-              
-              <div class="header__dropdawn-container">
-                <a href="#" class="header__navigation-button header__navigation-button--green">Menu <img src="img/arrow.svg"></a>
-                <ul class="header__dropdawn">
-                  <li><a href="#">Element one</a></li>
-                  <li><a href="#">Element two</a></li>
-                  <li><a href="#">Element three</a></li>
-                </ul>
-              </div>
-           
-            </li>
-          </ul>
-        </nav>
-        <div class="header__info-container">
-          <div class="header__text-container">
-            <h1 class="header__heading">Have questions?</h1>
-            <p class="header__text">
-              Необхідно створити форму зворотньго зв’язку.</br>
-              Для розуміння роботи форми, а саме зміщення label при наборі тексту, рекомендуємо ознайомитися з Google Material Design (https://material.io/components/text-fields).</br>
-              Також створити JS валідацію форми. Ім’я повинно бути мінімум 3 символи (не враховуючи порожні). Номер телефону повинен мати маску, задану на дизайні.
-            </p>
-            <p class="header__text header__text--highlighted">Додаткове завдання: данні форми після відправки автоматично додавати до Google Spreadsheets по API (мову інтеграції можете обрати на свій розсуд).</p>
-          </div>
-          <div id="statusMessage"></div>
-          <form action="post" name="google-sheet" autocomplete="off">
-            <div class="header__form-block">
-              <input type="text" class="header__form-input" name="Name" id="nameInput" placeholder=" ">
-              <label for="" class="header__form-label">Your name</label>
-            </div>
-            <div class="header__form-block">
-              <input type="text" class="header__form-input" data-mask="___ __ ___ __ __" name="Phone" id="phoneInput" placeholder=" ">
-              <label for="" class="header__form-label" >Your phone</label>
-            </div>
-            <div class="header__form-block">
-              <button type="submit" class="header__submit-button" id="sendBtn">SEND</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </header>
-    <main class="main">
-      <section class="cards">
-      <div class="cards__container">
-        <div class="cards__card">
-          <div class="cards__card--top">
-            <img src="/img/car.svg" alt="">
-            <h2>Мобільна </br> версія</h2>
-          </div>
-          <div class="cards__card--bottom">
-            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANTKU</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__main-picture-container">
+          <div class="header__main-picture-block">
+            <img class="header__main-picture" src="/img/logo.svg" alt="plant">
           </div>
         </div>
-        <div class="cards__card">
-          <div class="cards__card--top">
-            <img src="/img/car.svg" alt="">
-            <h2>Мобільна </br> версія</h2>
-          </div>
-          <div class="cards__card--bottom">
-            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
-          </div>
-        </div>
-        <div class="cards__card">
-          <div class="cards__card--top">
-            <img src="/img/car.svg" alt="">
-            <h2>Мобільна </br> версія</h2>
-          </div>
-          <div class="cards__card--bottom">
-            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
-          </div>
-        </div>
-        <div class="cards__card">
-          <div class="cards__card--top">
-            <img src="/img/car.svg" alt="">
-            <h2>Мобільна </br> версія</h2>
-          </div>
-          <div class="cards__card--bottom">
-            <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
-          </div>
-        </div>
-      </div>
-      </section>
-      <section class="map">
-        <div class="map__task">
-          <p>Нижче представлений дизайн Google карти. Тут необхідно підключити API Google Maps і нанести покажчики на координати (їх можна взяти приблизно). Основне завдання додати кастомні іконки, зазначені на дизайні. Блоки із завданням також потрібно залишити в верстці.</p>
-        </div>
-        <div class="map__container">
-          <div id="map"></div>
-        </div>
-      </section>
-      <section class="video">
-        <div class="video__container">
-          <div id="player" class="video__player"></div>
-        </div>
-        <div class="video__controls-container">
-          <div class="video__controls">
-            <div class="video__controls-row">
-              <button class="btn video__control-btn" id="playBtn">PLAY</button>
-              <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
-            </div>
-         
-              <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
-        
+        <div class="header__content-container">
+          <nav class="header__navigation-container">
+            <ul class="header__navigation">
+              <li class="header__navigation-block header__navigation-block--icons">
+                <a href="#"><img class="header__navigation-icon" src="img/search.svg" alt=""></a>
+                <a href="#"><img class="header__navigation-icon" src="img/shopping-cart.svg" alt=""></a>
+              </li>
+              <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button">Sign up</a></li>
+              <li class="header__navigation-block"><a href="#" class="header__navigation-button header__navigation-button--green">Sign in</a></li>
+              <li class="header__navigation-block">
+                
+                <div class="header__dropdawn-container">
+                  <a href="#" class="header__navigation-button header__navigation-button--green">Menu <img src="img/arrow.svg"></a>
+                  <ul class="header__dropdawn">
+                    <li><a href="#">Element one</a></li>
+                    <li><a href="#">Element two</a></li>
+                    <li><a href="#">Element three</a></li>
+                  </ul>
+                </div>
             
-              <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
-         
-          </div>  
-          <div class="video__text-container">
-            <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__info-container">
+            <div class="header__text-container">
+              <h1 class="header__heading">Have questions?</h1>
+              <p class="header__text">
+                Необхідно створити форму зворотньго зв’язку.</br>
+                Для розуміння роботи форми, а саме зміщення label при наборі тексту, рекомендуємо ознайомитися з Google Material Design (https://material.io/components/text-fields).</br>
+                Також створити JS валідацію форми. Ім’я повинно бути мінімум 3 символи (не враховуючи порожні). Номер телефону повинен мати маску, задану на дизайні.
+              </p>
+              <p class="header__text header__text--highlighted">Додаткове завдання: данні форми після відправки автоматично додавати до Google Spreadsheets по API (мову інтеграції можете обрати на свій розсуд).</p>
+            </div>
+            <div id="statusMessage"></div>
+            <form action="post" name="google-sheet" autocomplete="off">
+              <div class="header__form-block">
+                <input type="text" class="header__form-input" name="Name" id="nameInput" placeholder=" ">
+                <label for="" class="header__form-label">Your name</label>
+              </div>
+              <div class="header__form-block">
+                <input type="text" class="header__form-input" data-format="+*** ** *** ** **" data-mask="+380 __ ___ __ __" name="Phone" id="phoneInput" placeholder=" ">
+                <label for="" class="header__form-label" >Your phone</label>
+              </div>
+              <div class="header__form-block">
+                <button type="submit" class="header__submit-button" id="sendBtn">SEND</button>
+              </div>
+            </form>
           </div>
         </div>
-      </section>
-    </main>
-    <div class="line"></div>
-    <footer class="footer">
-      <div class="footer__left-container">
-        <h1 class="footer__heading">PLANTKU</h1>
-        <h2 class="footer__secondary-heading">Plantku House</h2>
-        <p class="footer__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, porro.</p>
-      </div>
-      <div class="footer__right-container">
-        <h2 class="footer__secondary-heading">Menu</h2>
-        <ul class="footer__list">
-          <li><a href="#">Element one</a></li>
-          <li><a href="#">Element two</a></li>
-          <li><a href="#">Element three</a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
+      </header>
+      <main class="main">
+        <section class="cards">
+        <div class="cards__container">
+          <div class="cards__card">
+            <div class="cards__card--top">
+              <img src="/img/car.svg" alt="">
+              <h2>Мобільна </br> версія</h2>
+            </div>
+            <div class="cards__card--bottom">
+              <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+            </div>
+          </div>
+          <div class="cards__card">
+            <div class="cards__card--top">
+              <img src="/img/car.svg" alt="">
+              <h2>Мобільна </br> версія</h2>
+            </div>
+            <div class="cards__card--bottom">
+              <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+            </div>
+          </div>
+          <div class="cards__card">
+            <div class="cards__card--top">
+              <img src="/img/car.svg" alt="">
+              <h2>Мобільна </br> версія</h2>
+            </div>
+            <div class="cards__card--bottom">
+              <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+            </div>
+          </div>
+          <div class="cards__card">
+            <div class="cards__card--top">
+              <img src="/img/car.svg" alt="">
+              <h2>Мобільна </br> версія</h2>
+            </div>
+            <div class="cards__card--bottom">
+              <p>Адаптивну версію верстки потрібно зробити на свій розсуд, так щоб нею було зручно користуватися на різних девайсах</p>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section class="map">
+          <div class="map__task">
+            <p>Нижче представлений дизайн Google карти. Тут необхідно підключити API Google Maps і нанести покажчики на координати (їх можна взяти приблизно). Основне завдання додати кастомні іконки, зазначені на дизайні. Блоки із завданням також потрібно залишити в верстці.</p>
+          </div>
+          <div class="map__container">
+            <div id="map"></div>
+          </div>
+        </section>
+        <section class="video">
+          <div class="video__container">
+            <div id="player" class="video__player"></div>
+          </div>
+          <div class="video__controls-container">
+            <div class="video__controls">
+              <div class="video__controls-row">
+                <button class="btn video__control-btn" id="playBtn">PLAY</button>
+                <button class="btn video__control-btn" id="pauseBtn">PAUSE</button>
+              </div>
+                <button class="btn video__control-btn" id="runOffBtn">RUN OFF THE SET MARK</button>
+                <input type="text" class="video__control-input" placeholder="startSeconds" id="runOffInput">
+            </div>  
+            <div class="video__text-container">
+              <p class="video__controls-text">Необхідно підключити YoutubeAPI, і вставити будь-яке відео (зліва). Поруч створити кнопки управління для плеєра. Третя кнопка управління повинна почати воспроізвденіе відео з вказаної в полі (startSeconds) секунди.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="line"></div>
+      <footer class="footer">
+        <div class="footer__left-container">
+          <h1 class="footer__heading">PLANTKU</h1>
+          <h2 class="footer__secondary-heading">Plantku House</h2>
+          <p class="footer__text">Jl. Laksda Adisucipto No.51, Demangan, Kec. Depok, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55282</p>
+        </div>
+        <div class="footer__right-container">
+          <h2 class="footer__secondary-heading">Menu</h2>
+          <ul class="footer__list">
+            <li><a href="#">Element one</a></li>
+            <li><a href="#">Element two</a></li>
+            <li><a href="#">Element three</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
 
- 
-  <script src="js/main.js"></script>
-  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAI-wjRrpckvUdAJDrs8mmEuUQoLsHM4&callback=initMap"></script>
-</body>
+    <script src="js/main.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIAI-wjRrpckvUdAJDrs8mmEuUQoLsHM4&callback=initMap"></script>
+  </body>
 </html>
